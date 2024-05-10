@@ -12,9 +12,9 @@ Run the command `npm test mythical-creatures/test/dragon-test.js`. To run other 
 
 ### Creature Order
 
-- [ ] `dragon`
-- [ ] `vampire`
-- [ ] `hobbit`
+- [x] `dragon`
+- [x] `vampire`
+- [x] `hobbit`
 
 ### Extra Challenge: Make a New Creature!
 

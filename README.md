@@ -42,7 +42,7 @@ We find that when students complete the same test suite over and over, memorizat
 Completing all of these test suites is not necessary, but you should be working on this repo regularly. We see that students are the most successful when they establish a routine for working through these test suites. For example, you might work on them for 45 minutes every morning before class. Find a routine that works best for you and plan ahead so you remain on track to complete the majority of the tests.
 
 ### Test Suites
-- [ ] 🧚 ‍[Mythical Creatures](./mythical-creatures)
+- [x] 🧚 ‍[Mythical Creatures](./mythical-creatures)
 - [ ] ✈️ [Airport](./airport)
 - [ ] 🎧 [DJ](./dj)
 - [ ] 🍔 [Favorite Foods](./favorite-foods)
@@ -69,3 +69,8 @@ Completing all of these test suites is not necessary, but you should be working 
 Most of the tests are skipped. When you see `it.skip('should be a function', function () {` in a test, it means that test has been skipped. They are skipped for a good reason - that way, when you run the test suite for the first time, you don't see tons of errors screaming at you in the terminal.
 
 Unskip each test, one at a time in order, so you can concentrate on making one test pass. Unskip the test by deleting the `.skip` from the test's first line so it should look more like `it('should be a function', function () {`. Run the test to see what kind of error you are getting, and then implement the code to make the test pass!
+
+## TODO's
+
+*Come back and finish later...*
+- [ ] Mythical Creatures -> create custom creature & test suite
