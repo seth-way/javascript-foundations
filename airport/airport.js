@@ -1,9 +1,14 @@
+function createAirport() {}
 
+function welcomeGuests() {}
 
+function landPlanes() {}
 
-module.exports = { 
-  // createAirport, 
-  // welcomeGuests, 
-  // landPlanes, 
-  // checkAirlineLocations
+function checkAirlineLocations() {}
+
+module.exports = {
+  createAirport,
+  welcomeGuests,
+  landPlanes,
+  checkAirlineLocations
 };
