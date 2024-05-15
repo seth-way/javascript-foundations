@@ -24,7 +24,7 @@ Completing all of these test suites is not necessary, but you should be working 
 - [x] 🎧 [DJ](./dj)
 - [x] 🍔 [Favorite Foods](./favorite-foods)
 - [ ] 🎮 [Video Games](./video-games/)
-- [ ] 🎂 [Birthdays](./birthdays)
+- [x] 🎂 [Birthdays](./birthdays)
 - [ ] 🗓 [Calendar](./calendar/)
 - [ ] 💵 [Vending Machine](./vending-machine/)
 - [ ] 🛗 [Elevator](./elevator/)
