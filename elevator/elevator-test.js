@@ -33,7 +33,7 @@ describe('Elevator', function() {
     assert.equal(message, 'Floor 100 does not exist!');
   });
 
-  it.skip('should be able to drop off passenger', function() {
+  it('should be able to drop off passenger', function() {
     var elevator = createElevator('Upper Valley Mall', 4, 1, ['Scott', 'Mark', 'Joey']);
 
     var remainingPassengers = dropOffPassenger(elevator, 'Mark');
