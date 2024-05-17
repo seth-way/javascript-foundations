@@ -30,7 +30,7 @@ Completing all of these test suites is not necessary, but you should be working 
 - [x] 🛗 [Elevator](./elevator/)
 - [x] 📚 [Library](./library)
 - [ ] 🌮 [Taco Stand](./tacoStand/)
-- [ ] 🧶 [Crafting](./crafting/)
+- [x] 🧶 [Crafting](./crafting/)
 - [ ] ✂️ [Barber Shop](./barber-shop/)
 - [ ] 🥗 [Meal Planning](./meal-planning/)
 - [ ] 🍜 [Restaurant](./restaurant/)
