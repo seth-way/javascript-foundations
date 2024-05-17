@@ -1,10 +1,16 @@
 var assert = require('chai').assert;
-var { createMaterial, calculateMaterialCost, createSupplyCloset, addSupply, createNewProject, compareMaterials } = require('./crafts');
+var {
+  createMaterial,
+  calculateMaterialCost,
+  createSupplyCloset,
+  addSupply,
+  createNewProject,
+  compareMaterials,
+} = require('./crafts');
 
-describe('Crafting', function() {
-
-  describe('Material', function() {
-    it.skip('should create a new material', function() {
+describe('Crafting', function () {
+  describe('Material', function () {
+    it('should create a new material', function () {
       var yarn = createMaterial('yarn', 'skein', 6.99);
 
       assert.equal(yarn.name, 'yarn');
@@ -12,8 +18,8 @@ describe('Crafting', function() {
       assert.equal(yarn.costPerUnit, 6.99);
     });
 
-    it.skip('should calculate cost of material', function() {
-      var fabric = createMaterial('fabric', 'yard', 12.50);
+    it('should calculate cost of material', function () {
+      var fabric = createMaterial('fabric', 'yard', 12.5);
 
       var fabricCost = calculateMaterialCost(fabric, 4);
 
@@ -27,9 +33,9 @@ describe('Crafting', function() {
     });
   });
 
-  describe('Supply Closet', function() {
-    it.skip('should create a supply closet', function() {
-      var fabric = createMaterial('fabric', 'yard', 12.50);
+  describe('Supply Closet', function () {
+    it('should create a supply closet', function () {
+      var fabric = createMaterial('fabric', 'yard', 12.5);
       var paint = createMaterial('paint', 'pint', 3.95);
       var yarn = createMaterial('yarn', 'skein', 6.99);
 
@@ -38,15 +44,15 @@ describe('Crafting', function() {
       assert.deepEqual(myCloset, { supplies: ['fabric', 'paint', 'yarn'] });
     });
 
-    it.skip('should be able to start empty', function() {
+    it('should be able to start empty', function () {
       var myCloset = createSupplyCloset();
 
       assert.deepEqual(myCloset, { supplies: [] });
     });
 
-    it.skip('should be able to add new supplies to the supply closet', function() {
-      var glitter = createMaterial('glitter', 'ounce', .99);
-      
+    it('should be able to add new supplies to the supply closet', function () {
+      var glitter = createMaterial('glitter', 'ounce', 0.99);
+
       var myCloset = createSupplyCloset([glitter]);
 
       var thread = createMaterial('thread', 'bobbin', 3.67);
@@ -56,20 +62,23 @@ describe('Crafting', function() {
       assert.deepEqual(updatedCloset, ['glitter', 'thread']);
     });
 
-    it.skip('should not allow you to add the same supply again', function() {
-      var fabric = createMaterial('fabric', 'yard', 12.50);
+    it('should not allow you to add the same supply again', function () {
+      var fabric = createMaterial('fabric', 'yard', 12.5);
       var paint = createMaterial('paint', 'pint', 3.95);
 
       var myCloset = createSupplyCloset([fabric, paint]);
 
-      assert.deepEqual(addSupply(myCloset, fabric), 'You already have fabric in your closet!');
-    })
+      assert.deepEqual(
+        addSupply(myCloset, fabric),
+        'You already have fabric in your closet!'
+      );
+    });
   });
 
-  describe('Project', function() {
-    it.skip('should create a new craft project', function() {
+  describe('Project', function () {
+    it('should create a new craft project', function () {
       var thread = createMaterial('thread', 'bobbin', 3.67);
-      var fabric = createMaterial('aida fabric', 'yard', 15.50);
+      var fabric = createMaterial('aida fabric', 'yard', 15.5);
       var materials = [thread, fabric];
 
       var crossStitchProject = createNewProject(materials, 'in progress');
@@ -78,17 +87,17 @@ describe('Crafting', function() {
       assert.equal(crossStitchProject.status, 'in progress');
     });
 
-    it.skip('should have a status of not started if not specified', function() {
-      var string = createMaterial('warp string', 'yard', .49);
+    it('should have a status of not started if not specified', function () {
+      var string = createMaterial('warp string', 'yard', 0.49);
       var yarn = createMaterial('yarn', 'skein', 7.85);
 
       assert.equal(createNewProject([string, yarn]).status, 'not started');
     });
 
-    it.skip('should be able to see if you have the necessary supplies to start a project', function() {
+    it('should be able to see if you have the necessary supplies to start a project', function () {
       var paper = createMaterial('paper', 'ream', 13.99);
       var paint = createMaterial('paint', 'bottle', '4.50');
-      
+
       var materials = [paper, paint];
 
       var mySupplies = createSupplyCloset(materials);
@@ -100,8 +109,8 @@ describe('Crafting', function() {
       assert.equal(check, 'Yay! You can start this project!');
     });
 
-    it.skip('should be able to see if you have the necessary supplies to start a project', function() {
-      var string = createMaterial('warp string', 'yard', .49);
+    it('should be able to see if you have the necessary supplies to start a project', function () {
+      var string = createMaterial('warp string', 'yard', 0.49);
       var yarn = createMaterial('yarn', 'skein', 7.85);
 
       var mySupplies = createSupplyCloset([string]);
@@ -110,7 +119,10 @@ describe('Crafting', function() {
 
       var check = compareMaterials(weavingProject, mySupplies);
 
-      assert.equal(check, 'Oh no! You need to go shopping before you can start this project!');
-    })
+      assert.equal(
+        check,
+        'Oh no! You need to go shopping before you can start this project!'
+      );
+    });
   });
 });
